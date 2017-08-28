@@ -46,7 +46,7 @@ public class CaptureActivity extends Activity {
 	private Rect mCropRect = null;
 	private boolean barcodeScanned = false;
 	private boolean previewing = true;
-	public static final int MY_PERMISSIONS_REQUEST_CAMERA = 100;
+	public static final int MY_PERMISSIONS_REQUEST_CAMERA = 133;
 
 	public void onCreate(Bundle savedInstanceState) {
 		try {

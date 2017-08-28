@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/ZBarScanAndroid.iml" filepath="$PROJECT_DIR$/ZBarScanAndroid.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ZbarAndroid.iml" filepath="$PROJECT_DIR$/ZbarAndroid.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
     </modules>
   </component>
