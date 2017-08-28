@@ -49,44 +49,15 @@ public class CaptureActivity extends Activity {
 	public static final int MY_PERMISSIONS_REQUEST_CAMERA = 133;
 
 	public void onCreate(Bundle savedInstanceState) {
-		try {
+
 			super.onCreate(savedInstanceState);
-
-			if (ContextCompat.checkSelfPermission(this,
-					Manifest.permission.CAMERA)
-					!= PackageManager.PERMISSION_GRANTED) {
-
-				// Should we show an explanation?
-				if (ActivityCompat.shouldShowRequestPermissionRationale(this,
-						Manifest.permission.CAMERA)) {
-
-					// Show an expanation to the user *asynchronously* -- don't block
-					// this thread waiting for the user's response! After the user
-					// sees the explanation, try again to request the permission.
-
-				}else {
-
-					// No explanation needed, we can request the permission.
-
-					ActivityCompat.requestPermissions(this,
-							new String[]{Manifest.permission.CAMERA},
-							MY_PERMISSIONS_REQUEST_CAMERA);
-
-					// MY_PERMISSIONS_REQUEST_READ_CONTACTS is an
-					// app-defined int constant. The callback method gets the
-					// result of the request.
-				}
-			}
-
-
+		    mPermissions();
 			setContentView(R.layout.activity_capture);
 			setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
 			findViewById();
 			addEvents();
 			initViews();
-		}catch (Exception e){
-			e.getMessage();
-		}
+
 	}
 
 	private void findViewById() {
@@ -111,6 +82,28 @@ public class CaptureActivity extends Activity {
 				}
 			}
 		});
+	}
+
+	private void mPermissions(){
+		if (ContextCompat.checkSelfPermission(this,
+				Manifest.permission.CAMERA)
+				!= PackageManager.PERMISSION_GRANTED) {
+			// Should we show an explanation?
+			if (ActivityCompat.shouldShowRequestPermissionRationale(this,
+					Manifest.permission.CAMERA)) {
+				// Show an expanation to the user *asynchronously* -- don't block
+				// this thread waiting for the user's response! After the user
+				// sees the explanation, try again to request the permission.
+			}else {
+				// No explanation needed, we can request the permission.
+				ActivityCompat.requestPermissions(this,
+						new String[]{Manifest.permission.CAMERA},
+						MY_PERMISSIONS_REQUEST_CAMERA);
+				// MY_PERMISSIONS_REQUEST_READ_CONTACTS is an
+				// app-defined int constant. The callback method gets the
+				// result of the request.
+			}
+		}
 	}
 
 	private void initViews() {
